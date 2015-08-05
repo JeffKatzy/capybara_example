@@ -34,7 +34,15 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-gem 'debugger', group: [:development, :test]
+gem 'vcr'
+gem 'webmock'
+gem 'annotate'
+gem 'octokit'
+gem "selenium-webdriver"
+gem 'database_cleaner'
+gem 'capybara'
+gem 'better_errors'
+gem "binding_of_caller"
+gem 'pry-byebug', group: [:development, :test]
 gem 'rspec-rails', group: [:development, :test]
 gem 'factory_girl_rails', group: :test

@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422051044) do
+ActiveRecord::Schema.define(version: 20150805032850) do
+
+  create_table "gists", force: true do |t|
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", force: true do |t|
+    t.integer  "editor_id"
+    t.string   "state"
+    t.text     "content"
+    t.datetime "published_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["editor_id"], name: "index_pages_on_editor_id"
+  add_index "pages", ["state"], name: "index_pages_on_state"
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -21,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140422051044) do
     t.string   "lastname"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "birthday"
   end
 
 end
